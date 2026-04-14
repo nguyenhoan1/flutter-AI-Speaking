@@ -18,7 +18,7 @@ class AuthenticationRemoteDataSourceImpl
      final response = await dio.post(API.LOGIN, data: {
         'email': email,
         'password': password,
-      });
+      },);
       final token = response.data['token'].toString();
       await prefs.setString(ACCESS_TOKEN, token);
     } catch (e) {

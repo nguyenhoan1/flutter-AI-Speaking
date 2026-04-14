@@ -97,7 +97,7 @@ Future<dynamic> showPickImageDialog(
                   onTap: onCameraTap,
                 ),
               ],
-            )
+            ),
           ],
         ),
       );
@@ -165,7 +165,7 @@ Future<dynamic> showConfirmationDialog(
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -178,11 +178,11 @@ Future<dynamic> showConfirmationDialog(
 
 class _BuildButtonIcon extends StatelessWidget {
   const _BuildButtonIcon({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.icon,
     required this.label,
-  }) : super(key: key);
+  });
   
   final VoidCallback onTap;
   final IconData icon;

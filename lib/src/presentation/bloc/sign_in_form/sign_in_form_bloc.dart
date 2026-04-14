@@ -17,7 +17,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           },
           signInWithEmail: (_) async {
             emit(state.copyWith(state: RequestState.loading));
-          await Future.delayed(Duration(seconds: 2));
+          await Future.delayed(const Duration(seconds: 2));
             final result = await _signInWithEmail.execute(
               state.email,
               state.password,
@@ -29,14 +29,14 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
                         message: f.message,
                       ),
                     ),
-                (_) => emit(state.copyWith(state: RequestState.loaded)));
+                (_) => emit(state.copyWith(state: RequestState.loaded)),);
           },
           emailOnChanged: (event) {
             emit(state.copyWith(email: event.email, state: RequestState.empty));
           },
           passwordOnChanged: (event) {
             emit(state.copyWith(
-                password: event.password, state: RequestState.empty));
+                password: event.password, state: RequestState.empty,),);
           },
         );
       },

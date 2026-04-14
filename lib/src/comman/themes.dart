@@ -9,7 +9,6 @@ ThemeData themeLight(BuildContext context) {
     disabledColor: ColorLight.disabledButton,
     // highlightColor: ColorLight.fontTitle,
     hintColor: ColorLight.fontSubtitle,
-    indicatorColor: ColorLight.primary,
     iconTheme: const IconThemeData(
       color: ColorLight.fontTitle,
     ),
@@ -78,7 +77,7 @@ ThemeData themeLight(BuildContext context) {
         fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
-    ),
+    ), tabBarTheme: TabBarThemeData(indicatorColor: ColorLight.primary),
   );
 }
 
@@ -88,7 +87,6 @@ ThemeData themeDark(BuildContext context) {
     cardColor: ColorDark.card,
     disabledColor: ColorDark.disabledButton,
     hintColor: ColorDark.fontSubtitle,
-    indicatorColor: ColorLight.primary,
     iconTheme: const IconThemeData(
       color: ColorDark.fontTitle,
     ),
@@ -157,6 +155,6 @@ ThemeData themeDark(BuildContext context) {
         fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
-    ),
+    ), tabBarTheme: TabBarThemeData(indicatorColor: ColorLight.primary),
   );
 }

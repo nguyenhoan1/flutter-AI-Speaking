@@ -7,7 +7,6 @@ import 'package:form_field_validator/form_field_validator.dart';
 enum TextFieldType { alphabet, email, text, password, phoneNumber, number }
 
 class CustomTextFormField extends StatelessWidget {
-  final _debouncer = Debouncer(milliseconds: 500);
 
   CustomTextFormField({
     Key? key,
@@ -31,6 +30,7 @@ class CustomTextFormField extends StatelessWidget {
     this.minLength = 1,
     this.minline = 1,
   }) : super(key: key);
+  final _debouncer = Debouncer(milliseconds: 500);
 
   final TextEditingController? controller;
   final TextFieldType textFieldType;
@@ -72,7 +72,7 @@ class CustomTextFormField extends StatelessWidget {
       ),
       EmailValidator(
         errorText: 'Invalid email address format',
-      )
+      ),
     ]);
 
     final passwordValidator = MultiValidator([
@@ -82,7 +82,7 @@ class CustomTextFormField extends StatelessWidget {
       MinLengthValidator(
         6,
         errorText: 'Password must be more than 6 characters',
-      )
+      ),
     ]);
 
     final phoneNumberValidator = MultiValidator([
@@ -158,7 +158,7 @@ class CustomTextFormField extends StatelessWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+      padding: const EdgeInsets.only(top: 8, bottom: 8),
       child: TextFormField(
         controller: controller,
         maxLines: maxLines,

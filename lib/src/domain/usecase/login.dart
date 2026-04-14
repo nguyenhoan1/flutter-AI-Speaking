@@ -7,6 +7,6 @@ class SignIn {
   final AuthenticationRepository _repository;
 
   Future<Either<Failure, void>> execute(String email, String password) async {
-    return await _repository.login(email, password);
+    return _repository.login(email, password);
   }
 }

@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:bloc_clean_architecture/firebase_options.dart';
+
 import 'package:bloc_clean_architecture/src/utilities/logger.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart' as bloc_concurrency;
 import 'package:bloc_clean_architecture/src/comman/themes.dart';
@@ -9,14 +12,17 @@ import 'package:bloc_clean_architecture/src/presentation/cubit/theme/theme_cubit
 import 'package:bloc_clean_architecture/src/utilities/app_bloc_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'src/utilities/go_router_init.dart';
-import './injection.dart' as di;
+import 'package:bloc_clean_architecture/src/utilities/go_router_init.dart';
+import 'package:bloc_clean_architecture/injection.dart' as di;
 
 void main() {
   logger.runLogging(
     () => runZonedGuarded(
-      () {
+      () async {
         WidgetsFlutterBinding.ensureInitialized();
+        await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        );
         Bloc.transformer = bloc_concurrency.sequential();
         Bloc.observer = const AppBlocObserver();
         di.init();
@@ -25,7 +31,6 @@ void main() {
       },
       logger.logZoneError,
     ),
-    const LogOptions(),
   );
 }
 
@@ -43,10 +48,9 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        title: 'flutter bloc clean architecture',
+        title: 'AI Speaking',
         theme: themeLight(context),
         darkTheme: themeDark(context),
-        themeMode: ThemeMode.system,
         routerConfig: routerinit,
       ),
     );

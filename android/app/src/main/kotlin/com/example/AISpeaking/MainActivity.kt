@@ -1,4 +1,4 @@
-package com.example.bloc_clean_architecture
+package com.example.AISpeaking
 
 import io.flutter.embedding.android.FlutterActivity
 

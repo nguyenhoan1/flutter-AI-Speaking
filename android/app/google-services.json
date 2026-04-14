@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "405112418174",
+    "project_id": "ai-speaki",
+    "storage_bucket": "ai-speaki.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405112418174:android:0afb5951671037be5bcd2f",
+        "android_client_info": {
+          "package_name": "com.example.AISpeaking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405112418174-a39gaflqmv62u76pbibqmv2c2vbvamsf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.AISpeaking",
+            "certificate_hash": "1b113be4e05d7738fcddb773f79e0403fb51cf29"
+          }
+        },
+        {
+          "client_id": "405112418174-29t29sp7jnkrr69c1k17ameumijfprdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz-bQlc3WEFsuHtcskoPpHwvFpXMRzTGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405112418174-29t29sp7jnkrr69c1k17ameumijfprdc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "405112418174-13v8tioc0acbr1ao93l8b8qk3a8jhg7a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.blocCleanArchitecture"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
