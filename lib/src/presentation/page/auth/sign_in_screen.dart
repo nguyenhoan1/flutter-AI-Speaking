@@ -275,10 +275,10 @@ class _SignInPageState extends State<SignInPage> with TickerProviderStateMixin {
           key: _formKey,
           child: Column(
             children: [
-              // Email field
+              // Email / Username field
               _buildGlassTextField(
                 controller: _emailController,
-                hintText: 'Email address',
+                hintText: 'Email or username',
                 icon: Icons.mail_outline_rounded,
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (v) {
@@ -288,11 +288,22 @@ class _SignInPageState extends State<SignInPage> with TickerProviderStateMixin {
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your email';
+                    return 'Please enter your email or username';
                   }
-                  if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-                      .hasMatch(value)) {
-                    return 'Please enter a valid email';
+                  final input = value.trim();
+                  // Nếu có ký tự '@' thì bắt buộc đúng định dạng email.
+                  if (input.contains('@')) {
+                    final emailRegex =
+                        RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                    if (!emailRegex.hasMatch(input)) {
+                      return 'Please enter a valid email';
+                    }
+                  } else {
+                    // Username: chỉ cho phép chữ, số, '.', '_', '-' và tối thiểu 3 ký tự.
+                    final usernameRegex = RegExp(r'^[a-zA-Z0-9._-]{3,}$');
+                    if (!usernameRegex.hasMatch(input)) {
+                      return 'Username must be at least 3 chars (letters, numbers, . _ -)';
+                    }
                   }
                   return null;
                 },

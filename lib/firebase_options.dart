@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'ai-speaki.firebasestorage.app',
     androidClientId: '405112418174-21609rc0c45g9cus28vank3mqspm12i9.apps.googleusercontent.com',
     iosClientId: '405112418174-fg3dbs7vd1mdaad4ekr44g347gge9m8b.apps.googleusercontent.com',
-    iosBundleId: 'com.example.AISpeaking',
+    iosBundleId: 'com.hoansky.aispeaking',
   );
 
   // Run: flutterfire configure

@@ -1,4 +1,5 @@
 import 'package:bloc_clean_architecture/src/comman/routes.dart';
+import 'package:bloc_clean_architecture/src/presentation/page/ai_teacher/ai_teacher_home_screen.dart';
 import 'package:bloc_clean_architecture/src/presentation/page/auth/sign_in_screen.dart';
 import 'package:bloc_clean_architecture/src/presentation/page/auth/sign_up_screen.dart';
 import 'package:bloc_clean_architecture/src/presentation/page/dashboard/dashboard_screen.dart';
@@ -49,6 +50,17 @@ GoRouter routerinit = GoRouter(
         return const DashBoardScreen();
       },
 
+    ),
+
+    ///  =================================================================
+    /// ********************** AI Teacher Route *************************
+    /// ==================================================================
+    GoRoute(
+      name: AppRoutes.AI_TEACHER_ROUTE_NAME,
+      path: AppRoutes.AI_TEACHER_ROUTE_PATH,
+      builder: (BuildContext context, GoRouterState state) {
+        return const AiTeacherHomeScreen();
+      },
     ),
   ],
   errorPageBuilder: (context, state) {

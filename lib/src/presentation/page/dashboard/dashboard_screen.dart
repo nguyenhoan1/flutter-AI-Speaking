@@ -1,6 +1,8 @@
 import 'dart:math';
 
+import 'package:bloc_clean_architecture/src/comman/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -337,7 +339,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
           icon: Icons.mic_rounded,
           label: 'New\nSession',
           gradient: const [Color(0xFF4A6CF7), Color(0xFF2A8AF6)],
-          onTap: () {},
+          onTap: () => context.pushNamed(AppRoutes.AI_TEACHER_ROUTE_NAME),
         ),
         const SizedBox(width: 12),
         _buildActionCard(

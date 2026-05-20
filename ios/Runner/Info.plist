@@ -68,5 +68,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>AI Speaking cần truy cập micro để bạn có thể luyện nói trực tiếp với Coach Lumi.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>AI Speaking cần nhận diện giọng nói để chuyển lời bạn nói thành văn bản trong buổi luyện nói.</string>
 </dict>
 </plist>

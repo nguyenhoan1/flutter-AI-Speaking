@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.AISpeaking</string>
+	<string>com.hoansky.aispeaking</string>
 	<key>PROJECT_ID</key>
 	<string>ai-speaki</string>
 	<key>STORAGE_BUCKET</key>
